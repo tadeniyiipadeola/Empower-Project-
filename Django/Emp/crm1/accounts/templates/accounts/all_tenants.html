@@ -1,0 +1,22 @@
+{% extends 'accounts/eng_dash.html'%} {% load static %} 
+
+{% block styles  %}
+    <link href="{% static '/css/table.css' %}" rel="stylesheet" media="screen">
+{% endblock %}
+
+{% block content%}
+<div>
+    <table id="table">
+        <tr>
+            <th>Tenant</th>
+            <th>Address</th>
+            <th>Unit #</th>
+          </tr>
+    </table>
+    {% for obj in objects %}
+        <tr><a href="{% url 'editTenant' username=obj.user %}" >{{ obj }}</a></tr>
+        <tr>{{obj.address1}}</th>
+        <tr>{{obj.address2}}</th>
+    {% endfor %}
+</div>
+{% endblock %}

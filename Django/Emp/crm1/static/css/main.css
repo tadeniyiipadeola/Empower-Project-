@@ -1,0 +1,9 @@
+body {
+  background-color: #ebeff5;
+}
+
+.login_form, .info_form {
+  width: 50%;
+  margin: auto;
+  margin-top: 40px;
+}

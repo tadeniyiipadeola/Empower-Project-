@@ -1,0 +1,48 @@
+{% extends 'accounts/main.html'%} {% load static %} {% block css %}
+    
+    <link rel="stylesheet" type="text/css" href=" {% static '/css/dashboard.css' %}"> {% endblock %} {% block content%} {%load crispy_forms_tags %}
+
+<div class="wrapper">
+    <div class="section">
+
+        <div class="container">
+        </div>
+    </div>
+    <div class="sidebar">
+        <h3>Hello, {{request.user.first_name}}</h3>
+        <p style="padding-left: 13px;"><strong>Main Menu</strong></p>
+        <ul>
+            <li>
+                <a href="#" class="active">
+                    <span class="icon"><i class="fas fa-home"></i></span>
+                    <span class="item">Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'allTenants' %}">
+                    <span class="icon"><i class="fas fa-users"></i></span>
+                    <span class="item">Tenants</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-building"></i></span>
+                    <span class="item">Landlords</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <span class="icon"><i class="fas fa-cog"></i></span>
+                    <span class="item">Settings</span>
+                </a>
+            </li>
+            <li>
+                <a href="{% url 'logout' %}">
+                    <span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+                    <span class="item">Logout</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'accounts/main.html'%}
+{%load static %}
+{% block content%} {%load crispy_forms_tags %}
+
+   <H2>Tenent application </H2>
+
+   <div class='post'>
+      <form method="POST" enctype="multipart/form-data">
+         {% csrf_token %}
+         {{ form | crispy }}
+         <!-- <input type="file" name="document"> -->
+         <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+      </form>
+
+      {% if pdf_path == '' %}
+         <embed src="{% static 'PDF/Tenant%20application.pdf' %}" type="application/pdf" width='80%' height='800px'>
+      {% else %}
+         <embed src="{{ pdf_path }}" type="application/pdf" width='80%' height='800px'>
+      {% endif %}
+   </div>
+
+{% endblock %}

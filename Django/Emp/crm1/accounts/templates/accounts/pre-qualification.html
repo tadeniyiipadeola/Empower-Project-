@@ -1,0 +1,11 @@
+{% extends 'accounts/main.html'%}
+{% block content%}
+{%load crispy_forms_tags %} 
+
+<div class=container>
+  <form method="POST">   
+    {% csrf_token %}
+    {{ form |crispy }}
+  </form>
+</div>
+{% endblock %}

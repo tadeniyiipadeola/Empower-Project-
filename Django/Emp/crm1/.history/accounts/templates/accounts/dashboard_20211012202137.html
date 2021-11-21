@@ -1,0 +1,54 @@
+{% extends 'accounts/main.html' %}
+
+{% block content %}
+
+<div class="wrapper">
+	<div class="section">
+	 
+		<div class="container">
+		</div>
+	</div>
+	<div class="sidebar">
+		<h3>Hello, {{request.user.first_name}}</h3>
+		<p style="padding-left: 13px;"><strong>Main Menu</strong></p>
+		<ul>
+			<li>
+				<a href="#" class="active">
+					<span class="icon"><i class="fas fa-home"></i></span>
+					<span class="item">Home</span>
+				</a>
+			</li>
+			<li>
+				<a href=""{% url 'tenantform' %}"">
+					<span class="icon"><i class="fas fa-file-alt"></i></span>
+					<span class="item">Application</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fas fa-bell"></i></span>
+					<span class="item">Announcement</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fas fa-address-book"></i> 	</span>
+					<span class="item">Contact ENG</span>
+				</a>
+			</li>
+			<li>
+				<a href="#">
+					<span class="icon"><i class="fas fa-cog"></i></span>
+					<span class="item">Settings</span>
+				</a>
+			</li>
+			<li>
+				<a href="{% url 'logout' %}">
+					<span class="icon"><i class="fas fa-sign-out-alt"></i></span>
+					<span class="item">Logout</span>
+				</a>
+			</li>
+		</ul>
+	</div>
+</div>
+{% endblock %}

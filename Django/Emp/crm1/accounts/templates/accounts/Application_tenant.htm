@@ -1,0 +1,66 @@
+{% extends 'accounts/main.html'%}
+
+{% block content %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+
+   <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+
+   <!-- Main css -->
+   <link rel="stylesheet" href="{% static 'css/style_container.css'%}">
+</head>
+
+<style>
+   .H2{
+      padding: 60px;
+      text-align: center;
+      font-size: 15;
+   }
+ 
+
+   .App_form{
+      padding: 60px;
+      width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      width:100%
+   }
+
+</style>
+
+<body>
+   <div class="container">
+      
+      <H2 class='H2'>Tenent application </H2>
+      <h2>Sign up to great new account </h2>
+      <form method="POST" id="signup-form" class="signup-form">
+         <div class="form-group">
+            <label for="your_avatar" class="form-label">Select avatar</label>
+            <div class="form-file">
+               <input type="file" name="your_avatar" id="your_avatar" class="custom-file-input" />
+               <span id='val'></span>
+               <span id='button'>Select File</span>
+            </div>
+      </div>
+
+         <div class='post'>
+            <form action="/action_page.php">
+               <input type="file" id="myFile" name="filename">
+               <input type="submit">
+            </form>
+         </div>
+         <div class="App_form">
+            <embed src="{% static 'PDF/Tenant application.pdf' %}" type="application/pdf" width='100%' height='800px'>
+         </div>
+   </div>
+</body>
+</html>
+
+{% endblock %}

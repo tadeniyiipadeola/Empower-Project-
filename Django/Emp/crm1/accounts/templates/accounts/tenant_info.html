@@ -1,0 +1,35 @@
+{% extends 'accounts/main.html'%} {% load static %} {% block content%} {%load crispy_forms_tags %}
+{% block styles  %}
+    <link href="{% static '/css/profile.css' %}" rel="stylesheet" media="screen">
+{% endblock %}
+<!-- <div class="float-container">
+    <div class="float-child">
+        {% include 'accounts/dashboard.html' %}
+    </div>
+    <div class="float-child">
+        
+    </div>
+</div> -->
+
+<div class="display_info">
+    {% if request.user != None %}
+        <div class="container mt-4 mb-4 p-3 d-flex justify-content-center">
+            <div class="card p-4">
+                <div class=" image d-flex flex-column justify-content-center align-items-center"> <button class="btn btn-secondary"> <img src="https://i.imgur.com/wvxPV9S.png" height="100" width="100" /></button> <span class="name mt-3">{{ request.user.first_name }}</span>
+                    <!-- <div class="d-flex flex-row justify-content-center align-items-center gap-2"> <span class="idd1">Oxc4c16a645_b21a</span> <span><i class="fa fa-copy"></i></span> </div> -->
+                    <!-- <div class=" d-flex mt-2"> <button class="btn1 btn-dark">Edit Profile</button> </div> -->
+                    <div class="text mt-3"> <span>{{ info_obj.address1 }} <br> {{ info_obj.address2 }}</span> </div>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+    
+</div>
+<div class="info_form">
+    <form method="POST">
+        {% csrf_token %} {{ form | crispy }}
+        <button class="w-100 btn btn-lg btn-primary" type="submit">Save</button>
+    </form>
+</div>
+
+{% endblock %}
